@@ -1,0 +1,34 @@
+# Command line to install the missing plugins
+
+-------------------------------------------------------------------------
+
+# BEFORE ALL
+# Integrations cordova 
+$ ionic integrations enable cordova --add
+
+-------------------------------------------------------------------------
+
+# AdmobFree plugin
+$ ionic cordova plugin add cordova-plugin-admob-free --save --variable ADMOB_APP_ID="YOUR_ADMOB_APP_ID"
+$ npm install --save @ionic-native/admob-free
+
+-------------------------------------------------------------------------
+
+# AppVersion plugin
+$ ionic cordova plugin add cordova-plugin-app-version
+$ npm install --save @ionic-native/app-version
+
+-------------------------------------------------------------------------
+
+# Network plugin
+$ ionic cordova plugin add cordova-plugin-network-information
+$ npm install --save @ionic-native/network
+
+-------------------------------------------------------------------------
+
+# AppVersion | Network | All In One | Only plugins without variable to install
+$ ionic cordova plugin add cordova-plugin-app-version cordova-plugin-network-information
+$ npm install --save @ionic-native/app-version @ionic-native/network
+
+-------------------------------------------------------------------------
+

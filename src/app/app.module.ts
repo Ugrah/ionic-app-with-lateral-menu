@@ -14,11 +14,13 @@ import {MoreButtonComponent} from "../components/more-button/more-button";
 import {MoreListComponent} from "../components/more-list/more-list";
 import {MenuButtonComponent} from "../components/menu-button/menu-button";
 
-// Plugins
-import {AppVersion} from "@ionic-native/app-version";
+// Provider
 import {AdMobProvider} from "../providers/ad-mob/ad-mob";
-import {Network} from "@ionic-native/network";
+
+// Plugins
 import {AdMobFree} from "@ionic-native/admob-free";
+import {AppVersion} from "@ionic-native/app-version";
+import {Network} from "@ionic-native/network";
 
 
 @NgModule({

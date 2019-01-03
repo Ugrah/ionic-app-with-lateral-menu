@@ -45,10 +45,10 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-app-version": {},
+      "cordova-plugin-network-information": {},
       "cordova-plugin-admob-free": {
-        "ADMOB_APP_ID": "ca-app-pub-7063688079174419~7323900600"
-      },
-      "cordova-plugin-network-information": {}
+        "ADMOB_APP_ID": "YOUR_ADMOB_APP_ID"
+      }
     }
   }
 }
