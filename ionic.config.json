@@ -1,0 +1,8 @@
+{
+  "name": "poultry-farming",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "id": "c6994e58"
+}
