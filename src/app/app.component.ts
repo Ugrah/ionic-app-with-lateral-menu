@@ -35,7 +35,7 @@ export class MyApp {
 
       this.adMobProvider.showBannerAd();
 
-      this.content.viewDidLoad.subscribe((view) => {
+      this.content.viewWillEnter.subscribe((view) => {
         this.adMobProvider.showInterstitialAd();
       });
     });
