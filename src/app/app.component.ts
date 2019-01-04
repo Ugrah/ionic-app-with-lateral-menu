@@ -5,13 +5,19 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import {AboutPage} from "../pages/about/about";
+import {MenuListPages} from "../variables-infos/pagesList";
+
 import {AdMobProvider} from "../providers/ad-mob/ad-mob";
+
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   rootPage:any = HomePage;
   aboutPage:any = AboutPage;
+  menuListPages: any[] = MenuListPages;
+
 
   @ViewChild('content') content: NavController;
 

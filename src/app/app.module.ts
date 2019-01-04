@@ -8,6 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {AboutPage} from "../pages/about/about";
+import {EmptyWithSubCategory, SubCategoryPage} from "../pages/empty-with-sub-category/empty-with-sub-category";
 
 // Components
 import {MoreButtonComponent} from "../components/more-button/more-button";
@@ -28,6 +29,13 @@ import {Network} from "@ionic-native/network";
     MyApp,
     HomePage,
     AboutPage,
+
+    // Optional Page
+    EmptyWithSubCategory,
+    SubCategoryPage,
+    // ---------------
+
+    // Optional Component
     MoreButtonComponent,
     MoreListComponent,
     MenuButtonComponent
@@ -41,6 +49,13 @@ import {Network} from "@ionic-native/network";
     MyApp,
     HomePage,
     AboutPage,
+
+    // Optional Page
+    EmptyWithSubCategory,
+    SubCategoryPage,
+    // ---------------
+
+    // Optional Component
     MoreButtonComponent,
     MoreListComponent,
     MenuButtonComponent

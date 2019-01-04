@@ -1,11 +1,17 @@
 <ion-menu [content]="content">
-  <ion-content>
+  <ion-content class="main-background-gradient">
     <img src="../assets/imgs/feature-graphic.png" width="100%">
     <ion-list>
       <button ion-item icon-start (click)="onNavigate(rootPage)">
         <ion-icon name="home"></ion-icon>
         Home
       </button>
+
+      <button *ngFor="let page of menuListPages" ion-item icon-start (click)="onPush(page.pageName)">
+        <ion-icon name=""></ion-icon>
+        {{ page.title }}
+      </button>
+
     </ion-list>
   </ion-content>
   <ion-footer>

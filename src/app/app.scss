@@ -14,3 +14,31 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+// Use this class for background color gradient or not.
+// Make the changes according to your choice
+// Apply the class to ion-content
+.main-background-gradient{
+  background-image: linear-gradient(to top left, #7B01C9, #2DC9F9);
+}
+
+//Custom the other content according the background color
+
+ion-footer{
+  p{
+    color: #fff;
+  }
+}
+
+ion-content{
+  ion-card{
+    ion-card-header{
+      background-color: #2DC9F9;
+      .ion-card-header-text{
+        color: #f4f4f4;
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+    }
+  }
+}
