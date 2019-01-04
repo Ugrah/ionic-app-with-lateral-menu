@@ -22,7 +22,7 @@ export class AdMobProvider implements OnInit, OnDestroy {
   oldDateInterstitialAd: Date;
   delays: number = Delays;
   isTesting: boolean = IsTesting;
-  //isConnected:boolean = IsConnected;
+  isConnected:boolean = IsConnected;
 
   connectSubscription: Subscription;
   disconnectSubscription: Subscription;
@@ -35,7 +35,6 @@ export class AdMobProvider implements OnInit, OnDestroy {
 
   ngOnInit(){
     // watch network for a disconnect
-    /*
     this.disconnectSubscription = this.network.onDisconnect().subscribe(() => {
       this.isConnected = false;
     });
@@ -43,12 +42,11 @@ export class AdMobProvider implements OnInit, OnDestroy {
     this.connectSubscription = this.network.onConnect().subscribe(() => {
       this.isConnected = true;
     });
-    */
   }
 
   setIsConnect(){
     if(this.network.type !== 'none'){
-      //this.isConnected = true;
+      this.isConnected = true;
     }
   }
 
@@ -74,7 +72,7 @@ export class AdMobProvider implements OnInit, OnDestroy {
 
   showBannerAd() {
     this.setIsConnect();
-    if(this.getBannerId() !== '') {
+    if(this.getBannerId() !== '' && this.isConnected) {
       let bannerConfig: AdMobFreeBannerConfig = {
         id: this.getBannerId(),
         isTesting: this.isTesting,
@@ -123,7 +121,7 @@ export class AdMobProvider implements OnInit, OnDestroy {
         });
 
         //Hide adBanner before show adInterstial
-        //this.hideBannerAd();
+        this.hideBannerAd();
 
         this.adMobFree.interstitial.prepare();
         this.oldDateInterstitialAd = new Date();

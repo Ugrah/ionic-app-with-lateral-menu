@@ -1,3 +1,4 @@
+# INTALL PLUGINS MISSING
 # Command line to install the missing plugins
 
 -------------------------------------------------------------------------
@@ -32,3 +33,9 @@ $ npm install --save @ionic-native/app-version @ionic-native/network
 
 -------------------------------------------------------------------------
 
+# RENAME THE NEW APP
+1. Change the app name in the follow file after enable cordova:
+- config.xml
+- ionic.config.json
+- package.json
+- package-lock.json
