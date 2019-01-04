@@ -29,17 +29,14 @@ export class MyApp {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
-      statusBar.overlaysWebView(true);
+      statusBar.styleBlackTranslucent();
+      statusBar.show();
       splashScreen.hide();
 
-      this.content.viewWillEnter.subscribe((view) => {
-        this.adMobProvider.showBannerAd();
-        console.log("Here We show banner ads");
-      });
+      this.adMobProvider.showBannerAd();
+
       this.content.viewWillLeave.subscribe(() => {
         this.adMobProvider.showInterstitialAd();
-        console.log("Now we showing interstitial ads");
       });
     });
   }
