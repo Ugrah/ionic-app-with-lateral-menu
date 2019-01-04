@@ -29,13 +29,13 @@ export class MyApp {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      statusBar.styleBlackTranslucent();
+      statusBar.styleLightContent();
       statusBar.show();
       splashScreen.hide();
 
       this.adMobProvider.showBannerAd();
 
-      this.content.viewWillLeave.subscribe(() => {
+      this.content.viewDidLoad.subscribe((view) => {
         this.adMobProvider.showInterstitialAd();
       });
     });
@@ -51,4 +51,3 @@ export class MyApp {
     this.menuCtrl.close();
   }
 }
-
