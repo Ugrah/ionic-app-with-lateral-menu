@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ModalController, NavController, NavParams, ViewController} from 'ionic-angular';
+import {ModalController, NavParams, ViewController} from 'ionic-angular';
 import {AdMobProvider} from "../../providers/ad-mob/ad-mob";
 
 @Component({
@@ -21,11 +21,13 @@ export class EmptyWithSubCategory {
     }
   ];
 
-    constructor(private modalCtrl: ModalController) {
+  constructor(private modalCtrl: ModalController,
+              private adMobProvider: AdMobProvider) {
   }
 
   onModal(object){
-      let profileModal = this.modalCtrl.create(SubCategoryPage, {subCategory: object });
+    this.adMobProvider.showInterstitialAd();
+    let profileModal = this.modalCtrl.create(SubCategoryPage, {subCategory: object });
       profileModal.present();
   }
 }
@@ -68,7 +70,6 @@ export class SubCategoryPage {
   }
 
   ionViewDidLoad() {
-    this.adMobProvider.showInterstitialAd();
     this.subCategory = this.navParams.get("subCategory");
   }
 

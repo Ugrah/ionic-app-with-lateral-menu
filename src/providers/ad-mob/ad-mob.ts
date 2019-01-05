@@ -1,18 +1,15 @@
-import {Injectable, OnDestroy, OnInit} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {AdMobFree, AdMobFreeBannerConfig, AdMobFreeInterstitialConfig} from "@ionic-native/admob-free";
 import {Platform} from "ionic-angular";
-import {Subscription} from "rxjs";
-import {Network} from "@ionic-native/network";
 import {
   BannerIdAndroid,
   BannerIdIos, Delays,
   InterstitialIdAndroid, InterstitialIdIos,
-  IsConnected,
   IsTesting
 } from "../../config/adMobFree.config";
 
 @Injectable()
-export class AdMobProvider implements OnInit, OnDestroy {
+export class AdMobProvider {
   bannerIdAndroid: string = BannerIdAndroid;
   interstitialIdAndroid: string = InterstitialIdAndroid;
 
@@ -22,58 +19,33 @@ export class AdMobProvider implements OnInit, OnDestroy {
   oldDateInterstitialAd: Date;
   delays: number = Delays;
   isTesting: boolean = IsTesting;
-  //isConnected:boolean = IsConnected;
-
-  connectSubscription: Subscription;
-  disconnectSubscription: Subscription;
 
   constructor(private adMobFree: AdMobFree,
-              private platform: Platform,
-              private network: Network) {
+              private platform: Platform) {
     this.oldDateInterstitialAd = new Date();
-  }
-
-  ngOnInit(){
-    // watch network for a disconnect
-    /*
-    this.disconnectSubscription = this.network.onDisconnect().subscribe(() => {
-      this.isConnected = false;
-    });
-
-    this.connectSubscription = this.network.onConnect().subscribe(() => {
-      this.isConnected = true;
-    });
-    */
-  }
-
-  setIsConnect(){
-    if(this.network.type !== 'none'){
-      //this.isConnected = true;
-    }
   }
 
   getBannerId(){
     let id;
-    if(this.platform.is('android')){
+    if(this.platform.is('android'))
       id = this.bannerIdAndroid;
-    } else if (this.platform.is('ios')) {
+    else if (this.platform.is('ios'))
       id = this.bannerIdIos;
-    }
+
     return id;
   }
 
   getInterstitialId(){
     let id;
-    if(this.platform.is('android')){
+    if(this.platform.is('android'))
       id = this.interstitialIdAndroid;
-    } else if (this.platform.is('ios')) {
+    else if (this.platform.is('ios'))
       id = this.interstitialIdIos;
-    }
+
     return id;
   }
 
   showBannerAd() {
-    this.setIsConnect();
     if(this.getBannerId() !== '') {
       let bannerConfig: AdMobFreeBannerConfig = {
         id: this.getBannerId(),
@@ -87,15 +59,13 @@ export class AdMobProvider implements OnInit, OnDestroy {
   }
 
   removeBannerAd() {
-    if(this.adMobFree.banner) {
+    if(this.adMobFree.banner)
       this.adMobFree.banner.remove();
-    }
   }
 
   hideBannerAd() {
-    if(this.adMobFree.banner) {
+    if(this.adMobFree.banner)
       this.adMobFree.banner.hide();
-    }
   }
 
   showAgainBannerAd() {
@@ -122,22 +92,14 @@ export class AdMobProvider implements OnInit, OnDestroy {
           this.removeBannerAd();
         });
 
-        //Hide adBanner before show adInterstial
-        //this.hideBannerAd();
-
         this.adMobFree.interstitial.prepare();
         this.oldDateInterstitialAd = new Date();
 
-        // Wait a few second and launch this.showBannerAd()
+        // Wait a few second and relaunch this.showBannerAd()
         setTimeout(() => {
           this.showBannerAd();
         },10000);
       }
     }
-  }
-
-  ngOnDestroy(){
-    this.connectSubscription.unsubscribe();
-    this.disconnectSubscription.unsubscribe();
   }
 }
