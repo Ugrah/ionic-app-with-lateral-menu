@@ -18,8 +18,9 @@
 // Use this class for background color gradient or not.
 // Make the changes according to your choice
 // Apply the class to ion-content
+
 .main-background-gradient{
-  background-image: linear-gradient(to top left, #7B01C9, #2DC9F9);
+  background-image: linear-gradient(to top left, color($colors, main, base), color($colors, other, base));
 }
 
 //Custom the other content according the background color
@@ -30,15 +31,8 @@ ion-footer{
   }
 }
 
-ion-content{
-  ion-card{
-    ion-card-header{
-      background-color: #2DC9F9;
-      .ion-card-header-text{
-        color: #f4f4f4;
-        font-weight: bold;
-        font-size: 1.2em;
-      }
-    }
-  }
+ion-card-header{
+  background-color: color($colors, main, base);
+  font-weight: bold;
 }
+

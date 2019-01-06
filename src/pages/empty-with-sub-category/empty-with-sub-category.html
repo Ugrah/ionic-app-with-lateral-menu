@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="primary">
+  <ion-navbar color="main">
     <ion-buttons end>
       <more-button></more-button>
     </ion-buttons>
@@ -11,7 +11,7 @@
 
 <ion-content class="main-background-gradient">
   <ion-card>
-    <ion-card-header><h2 class="ion-card-header-text">Ion card header</h2></ion-card-header>
+    <ion-card-header color="light">Header title</ion-card-header>
     <ion-card-content>
       <p>Home content</p>
     </ion-card-content>
@@ -21,7 +21,7 @@
     <ion-card-content>
 
       <ion-grid text-center>
-        <button *ngFor="let subCategory of subCategoryList; let i = index" color="primary"
+        <button *ngFor="let subCategory of subCategoryList; let i = index" color="main"
                 ion-button
                 round
                 (click)="onModal(subCategory)">{{ subCategory.title }}</button>
