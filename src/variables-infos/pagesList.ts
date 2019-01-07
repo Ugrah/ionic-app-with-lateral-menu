@@ -16,3 +16,6 @@ export const MenuListPages: PageModel[] = [
     imgPath: "imagePath.jpg"
   }
 ];
+
+export const HomeListLinks: PageModel[] = MenuListPages;
+

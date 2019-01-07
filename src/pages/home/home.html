@@ -17,4 +17,15 @@
       <p>Home content</p>
     </ion-card-content>
   </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-grid text-center>
+        <button *ngFor="let page of homeListLink" color="main"
+                ion-button
+                round
+                [navPush]="page.pageName">{{ page.title }}</button>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
