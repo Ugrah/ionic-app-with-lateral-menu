@@ -3,12 +3,12 @@
     <img src="../assets/imgs/feature-graphic.png" width="100%">
     <ion-list>
       <button ion-item icon-start (click)="onNavigate(rootPage)">
-        <ion-icon name="home"></ion-icon>
+        <ion-icon color="main" name="home"></ion-icon>
         Home
       </button>
 
       <button *ngFor="let page of menuListPages" ion-item icon-start (click)="onPush(page.pageName)">
-        <ion-icon name=""></ion-icon>
+        <ion-icon color="main" name="list-box"></ion-icon>
         {{ page.title }}
       </button>
 
@@ -17,7 +17,7 @@
   <ion-footer>
     <ion-list>
       <button ion-item icon-start (click)="onPush(aboutPage)">
-        <ion-icon name="information-circle"></ion-icon>
+        <ion-icon color="main" name="information-circle"></ion-icon>
         About
       </button>
     </ion-list>
