@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {HomeListLinks} from "../../variables-infos/pagesList";
+import {HomeListLinks} from "../../models/pagesList.mapping";
 
 @Component({
   selector: 'page-home',

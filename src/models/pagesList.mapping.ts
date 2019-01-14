@@ -12,7 +12,7 @@ export const MenuListPages: PageModel[] = [
   {
     title: "Page Title",
     pageName: EmptyWithSubCategory,
-    icon: "ion-icon-name",
+    icon: "list-box",
     imgPath: "imagePath.jpg"
   }
 ];

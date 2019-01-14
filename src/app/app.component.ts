@@ -5,7 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import {AboutPage} from "../pages/about/about";
-import {MenuListPages} from "../variables-infos/pagesList";
+import {MenuListPages} from "../models/pagesList.mapping";
 
 import {AdMobProvider} from "../providers/ad-mob/ad-mob";
 
