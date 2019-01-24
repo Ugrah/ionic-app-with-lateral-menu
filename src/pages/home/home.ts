@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {HomeListLinks} from "../../models/pagesList.mapping";
+import {HomeListPages, HomePage} from "../../models/pagesList.mapping";
 
 @Component({
   selector: 'page-home',
@@ -7,7 +7,7 @@ import {HomeListLinks} from "../../models/pagesList.mapping";
 })
 export class HomePage {
 
-  homeListLink: any[] = HomeListLinks;
+  homeListLink: PageModel[] = HomeListPages;
 
   constructor() {
   }

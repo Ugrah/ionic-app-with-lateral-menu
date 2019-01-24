@@ -19,7 +19,7 @@
   </ion-card>
 
   <ion-grid class="menu-card-background-page">
-    <ion-card *ngFor="let page of homeListLink" [navPush]="page.pageName">
+    <ion-card *ngFor="let page of homeListLink" [navPush]="page.component">
       <img [src]="'../assets/imgs/' + page.imgPath"/>
       <div class="card-title">{{ page.title }}</div>
     </ion-card>
@@ -31,7 +31,7 @@
         <button *ngFor="let page of homeListLink" color="primary"
                 ion-button
                 full
-                [navPush]="page.pageName">{{ page.title }}</button>
+                [navPush]="page.component">{{ page.title }}</button>
       </ion-grid>
     </ion-card-content>
   </ion-card>

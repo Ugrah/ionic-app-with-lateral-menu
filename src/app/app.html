@@ -7,14 +7,14 @@
         Home
       </button>
 
-      <button *ngFor="let page of menuListPages" ion-item icon-start (click)="onPush(page.pageName)">
+      <button *ngFor="let page of menuListPages" ion-item icon-start (click)="onPush(page.component)">
         <!--
         Remove comment line if you want use avatar with list item
         <ion-avatar item-start>
           <img [src]="'../assets/imgs/' + page.imgPath">
         </ion-avatar>
         -->
-        <ion-icon color="main" [name]="page.icon"></ion-icon>
+        <ion-icon color="main" [name]="page?.icon?.name" [color]="page?.icon?.color"></ion-icon>
         {{ page.title }}
       </button>
 
